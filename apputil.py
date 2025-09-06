@@ -9,7 +9,7 @@ def ways(num_pennies, num_nickels):
 
     # Generator function that yields all combinations of pennies and nickels
 
-def gen()
+def gen():
 
     # try using 0 to num_nickels nickels
 
@@ -17,7 +17,7 @@ def gen()
 
         # calculate remaining pennies after using k nickels
 
-        remaining pennies = num_pennies - 5 * k
+        remaining_pennies = num_pennies - 5 * k
 
         # if remaining pennies is non-negative, yield 1 and recurse
 
@@ -27,7 +27,7 @@ def gen()
 
             #count the total number of yields and return
 
-            return sum(gen)
+            return sum(gen())
 
 #Exercise 2
 
@@ -58,13 +58,13 @@ def lowest_score(names, scores):
 #part 2
 
 def sort_names(names, scores):
-    """Return names sorted by their corresponding scores in ascending order"""
+    """Return names sorted by their corresponding scores in descending order"""
 
     # Convert scores to a numpy array
     scores_array = np.array(scores)
 
     # Get the indices that would sort the scores
-    sorted_indices = np.argsort(scores_array)
+    sorted_indices = np.argsort(-scores_array)
 
     # Use these indices to sort the names
     sorted_names = [names[i] for i in sorted_indices]
