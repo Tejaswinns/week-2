@@ -2,7 +2,7 @@ import numpy as np
 
 #Exercise 1
 
-def ways(num pennies,num nickels):
+def ways(num_pennies, num_nickels):
 
     """Return the number of ways to make change for num_pennies using a generator internally 
     returns: number of ways to make change"""
