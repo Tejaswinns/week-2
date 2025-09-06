@@ -9,7 +9,7 @@ def ways(num_pennies, num_nickels):
 
     # Generator function that yields all combinations of pennies and nickels
 
-def gen():
+        def gen():
 
     # try using 0 to num_nickels nickels
 
@@ -27,7 +27,7 @@ def gen():
 
             #count the total number of yields and return
 
-            return sum(gen())
+    return sum(gen())
 
 #Exercise 2
 
