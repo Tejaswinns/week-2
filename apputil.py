@@ -4,29 +4,20 @@ import numpy as np
 
 def ways(num_pennies, num_nickels):
 
-    """Return the number of ways to make change for num_pennies using a generator internally 
-    returns: number of ways to make change"""
+    """Return the number of ways to make change for num_pennies using only pennies and nickels"""
 
-    # Generator function that yields all combinations of pennies and nickels
 
-        def gen():
+    # generator function to yield combinations of pennies and nickels
+    def gen():
+        # number of nickels
+        for k in range(min(num_nickels, num_pennies // 5) + 1):
+            # calculate remaining pennies after using k nickels
+            remaining_pennies = num_pennies - 5 * k
+            if remaining_pennies >= 0:
+               yield 1 # yield 1 for each valid combination
 
-    # try using 0 to num_nickels nickels
 
-    for k in range(num_nickels + 1):
-
-        # calculate remaining pennies after using k nickels
-
-        remaining_pennies = num_pennies - 5 * k
-
-        # if remaining pennies is non-negative, yield 1 and recurse
-
-        if remaining_pennies >= 0:
-
-            yield 1 # yield 1 for this combination
-
-            #count the total number of yields and return
-
+    # sum the values yielded by the generator to get the total number of ways
     return sum(gen())
 
 #Exercise 2
